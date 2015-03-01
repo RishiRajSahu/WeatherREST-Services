@@ -1,8 +1,10 @@
 package com.temp.common.entity;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Document(collection="weather")
 public class WeatherData {
 
 	private String id;
