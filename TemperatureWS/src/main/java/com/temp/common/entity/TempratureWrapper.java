@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Document(collection = "weather")
 // specifying the target collection
-public class WeatherData {
+public class TempratureWrapper {
 
 	private String id;
 	private String name;

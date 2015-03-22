@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
 import com.temp.common.dao.BaseDAO;
-import com.temp.common.entity.WeatherData;
+import com.temp.common.entity.TempratureWrapper;
 
 @Controller
 @RequestMapping("/temp")
@@ -22,13 +22,13 @@ public class TemperatureController {
 private BaseDAO baseDAO;
 
 	@RequestMapping(value = "/accessWeather", method = RequestMethod.GET)
-	public @ResponseBody WeatherData accessWeatherApi(HttpServletRequest request) {
+	public @ResponseBody TempratureWrapper accessWeatherApi(HttpServletRequest request) {
  	    String country = request.getParameter("country");
  	    String city = request.getParameter("city");
  	    String url = "http://api.openweathermap.org/data/2.5/weather?q="+city+","+country;
  	    System.out.println("city:"+city+"country:"+country);
 		RestTemplate restTemplate = new RestTemplate();
-		WeatherData data = restTemplate.getForObject(url, WeatherData.class);
+		TempratureWrapper data = restTemplate.getForObject(url, TempratureWrapper.class);
 
 		java.util.Date date = new java.util.Date();
 		System.out.println(new Timestamp(date.getTime()));
