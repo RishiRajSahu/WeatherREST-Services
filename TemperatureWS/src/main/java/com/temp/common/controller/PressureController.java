@@ -1,7 +1,5 @@
 package com.temp.common.controller;
 
-import java.sql.Timestamp;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +13,8 @@ import com.temp.common.dao.BaseDAO;
 import com.temp.common.entity.WeatherData;
 
 @Controller
-@RequestMapping("/temp")
-public class TemperatureController {
+@RequestMapping("/pressure")
+public class PressureController {
 	
 @Autowired
 private BaseDAO baseDAO;
@@ -28,18 +26,14 @@ private BaseDAO baseDAO;
  	    String url = "http://api.openweathermap.org/data/2.5/weather?q="+city+","+country;
  	    System.out.println("city:"+city+"country:"+country);
 		RestTemplate restTemplate = new RestTemplate();
-		WeatherData data = restTemplate.getForObject(url, WeatherData.class);
-
-		java.util.Date date = new java.util.Date();
-		System.out.println(new Timestamp(date.getTime()));
-		data.setTimeStamp("" + new Timestamp(date.getTime()));
-		data.setServiceType("TEMP_SERVICE");
-		baseDAO.saveCollection(data);
-		System.out.println("Name1:    " + data.getName());
-		System.out.println("About:   " + data.getId());
-		System.out.println("Phone:   " + data.getCod());
-		System.out.println("Temp:   " + data.getMain().getTemp());
-		return data;
+        WeatherData data = restTemplate.getForObject(url, WeatherData.class);
+        baseDAO.saveCollection(data);
+        System.out.println("Name1:    " + data.getName());
+        System.out.println("About:   " + data.getId());
+        System.out.println("Phone:   " + data.getCod());
+        System.out.println("Temp:   " + data.getMain().getTemp());
+        return data;
+ 
 	}
 
 	public BaseDAO getBaseDAO() {
@@ -49,4 +43,6 @@ private BaseDAO baseDAO;
 	public void setBaseDAO(BaseDAO baseDAO) {
 		this.baseDAO = baseDAO;
 	}
+
+
 }

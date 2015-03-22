@@ -4,12 +4,15 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Document(collection="weather")
+@Document(collection = "weather")
+// specifying the target collection
 public class WeatherData {
 
 	private String id;
 	private String name;
 	private String cod;
+	private String timeStamp;
+	private String serviceType;
 	private TemperatureData main;
 	private Location coord;
 
@@ -35,6 +38,22 @@ public class WeatherData {
 
 	public void setCod(String cod) {
 		this.cod = cod;
+	}
+
+	public String getTimeStamp() {
+		return timeStamp;
+	}
+
+	public void setTimeStamp(String timeStamp) {
+		this.timeStamp = timeStamp;
+	}
+
+	public String getServiceType() {
+		return serviceType;
+	}
+
+	public void setServiceType(String serviceType) {
+		this.serviceType = serviceType;
 	}
 
 	public TemperatureData getMain() {
