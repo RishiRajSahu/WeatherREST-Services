@@ -1,7 +1,10 @@
-package com.temp.common.entity;
+package com.weather.entity.wrapper;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.weather.common.entity.Location;
+import com.weather.common.entity.WindData;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Document(collection = "weather")

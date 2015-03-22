@@ -1,4 +1,4 @@
-package com.temp.common.dao;
+package com.weather.common.dao;
 
 import org.springframework.data.mongodb.core.MongoOperations;
 

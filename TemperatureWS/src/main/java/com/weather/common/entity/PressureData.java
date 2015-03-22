@@ -1,4 +1,4 @@
-package com.temp.common.entity;
+package com.weather.common.entity;
 
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 

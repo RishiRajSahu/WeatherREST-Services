@@ -1,4 +1,4 @@
-package com.temp.common.controller;
+package com.weather.common.controller;
 
 import java.sql.Timestamp;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 
-import com.temp.common.dao.BaseDAO;
-import com.temp.common.entity.TempratureWrapper;
+import com.weather.common.dao.BaseDAO;
+import com.weather.entity.wrapper.TempratureWrapper;
 
 @Controller
 @RequestMapping("/temp")

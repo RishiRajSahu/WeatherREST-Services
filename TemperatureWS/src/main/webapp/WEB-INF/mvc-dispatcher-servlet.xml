@@ -12,7 +12,7 @@
         http://www.springframework.org/schema/data/mongo
         http://www.springframework.org/schema/data/mongo/spring-mongo-1.0.xsd">
 
-	<context:component-scan base-package="com.temp.common.controller" />
+	<context:component-scan base-package="com.weather.common.controller" />
 
 	<mvc:annotation-driven />
 	
@@ -26,7 +26,7 @@
 	<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
 		<constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
 	</bean>
-	<bean id="baseDAO" class="com.temp.common.dao.BaseDAO">
+	<bean id="baseDAO" class="com.weather.common.dao.BaseDAO">
 		<property name="mongoOperations" ref="mongoTemplate">
 		</property>
 	</bean>
