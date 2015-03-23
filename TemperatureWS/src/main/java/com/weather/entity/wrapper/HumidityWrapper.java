@@ -6,7 +6,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import com.weather.common.entity.CloudsData;
 import com.weather.common.entity.HumidityData;
 import com.weather.common.entity.Location;
-import com.weather.common.entity.PressureData;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Document(collection = "weather")

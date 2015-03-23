@@ -38,7 +38,7 @@ private BaseDAO baseDAO;
         System.out.println("Name1:    " + data.getName());
         System.out.println("About:   " + data.getId());
         System.out.println("Phone:   " + data.getCod());
-        System.out.println("Temp:   " + data.getMain().getPressure());
+        System.out.println("pressure:   " + data.getMain().getPressure());
         return data;
  
 	}
